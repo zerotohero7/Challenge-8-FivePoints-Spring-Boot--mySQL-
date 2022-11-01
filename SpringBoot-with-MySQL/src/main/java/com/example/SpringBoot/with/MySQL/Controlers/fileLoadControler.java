@@ -28,7 +28,6 @@ public class fileLoadControler {
 
     @GetMapping("/{fileName}")
     public ResponseEntity<?> downLoadImg (@PathVariable String  fileName){
-
       return fileStorageService.downLoadImage(fileName);
     }
 

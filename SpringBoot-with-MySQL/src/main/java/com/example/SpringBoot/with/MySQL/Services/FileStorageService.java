@@ -42,12 +42,10 @@ public class FileStorageService {
 
         if (!dbImageData.isPresent()){
             throw new FileNotFoundException("image not found");
-/*
-            return new ResponseEntity<>("image not found", HttpStatus.NOT_FOUND);
-*/
-/*
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("kkkk");
-*/
+
+            /*return new ResponseEntity<>("image not found", HttpStatus.NOT_FOUND);*/
+
+           /* return ResponseEntity.status(HttpStatus.NOT_FOUND).body("kkkk");*/
         }
         byte[] images =ImageUtils.decompressImage(dbImageData.get().getImageData());
 
