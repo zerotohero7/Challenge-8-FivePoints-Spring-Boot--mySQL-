@@ -25,8 +25,30 @@ public class UsersServices {
         return UsersRepo.findAll();
     }
 
+    public Integer getAllNumber () {
+
+        return UsersRepo.findAll().size();
+    }
+
+
     public Users getOne (int idUser) {
         return UsersRepo.findById(idUser).orElse(null);
+    }
+
+    public Boolean existsByID (int idUser){
+        return UsersRepo.existsById(idUser);
+    }
+
+    public  List<Users> getByEmail(String addressEmail){
+        return UsersRepo.findByEmail(addressEmail);
+    }
+
+    public Boolean existsByEMAIL (String emailUser){
+        return UsersRepo.existsByEmail(emailUser);
+    }
+
+    public Integer countUsers(){
+        return  UsersRepo.numberOfUsers();
     }
 
     public usersResponses supprimer (int idUser) {
